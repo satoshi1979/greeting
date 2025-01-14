@@ -32,7 +32,7 @@ class GreetingController extends Controller
                 $greeting = $set_of_greetings[rand(0, 3)];
                 break;
             default:
-                $page_title = 'morning,afternoon,evening,night or random';
+                $page_title = 'put morning,afternoon,evening,night or random';
                 $greeting = 'ここにあいさつが入ります。';
         }
 
@@ -40,14 +40,6 @@ class GreetingController extends Controller
         return view(
             'comments/greeting',
             ['page_title' => $page_title, 'greeting' => $greeting]
-        );
-    }
-
-    public function freeword($msg)
-    {
-        return view(
-            'comments/freeword',
-            ['msg' => $msg]
         );
     }
 }

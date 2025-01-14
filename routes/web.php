@@ -9,4 +9,8 @@ Route::get('/', function () {
 
 
 Route::get('/comments/{msg}', [GreetingController::class, 'greeting']);
-Route::get('/comments/freeword/{msg}', [GreetingController::class, 'freeword']);
+
+
+Route::get('/comments/freeword/{msg}', function ($msg) {
+    return view('comments.freeword', ['msg' => $msg]);
+});
